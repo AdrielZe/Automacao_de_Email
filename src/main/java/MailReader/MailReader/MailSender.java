@@ -10,8 +10,8 @@ public class MailSender {
     void sendEmail(String receiver) {
         String host = "smtp.gmail.com";
         String port = "587";
-        String username = "Digite seu gmail aqui";
-        String password = "Digite a sua senha de app do Google aqui";
+        String username = "suacaixadeentrada@gmail.com";
+        String password = "foxz ihsb zeds cfdd";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
