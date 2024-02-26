@@ -13,8 +13,8 @@ public class MailReader {
      MailSender mailSender = new MailSender();
      //servidor POP
      String host = "pop.gmail.com";
-     String username = "Digite seu gmail aqui";
-     String password = "Digite a sua senha de app do Google aqui";
+     String username = "suacaixadeentrada@gmail.com";
+     String password = "foxz ihsb zeds cfdd";
 
      //Configuração para realizar a conexão com o servidor POP;
      Properties prop = new Properties();
@@ -65,9 +65,10 @@ public class MailReader {
                            System.out.println("Conteudo do e-mail:\n" + bodyPart.getContent() + "\n");
                        }
                    }
-             if (Objects.equals(from, "Cliente <clienteimportantey@gmail.com>")){
-                 mailSender.sendEmail("clienteimportantey@gmail.com");
-             }
+              FromVerification verification = new FromVerification();
+              if(verification.verifyIfClientIsImportant(from)) {
+                 mailSender.sendEmail(from);
+              }
            }
 
        //Fechar pasta de entrada e conexão com servidor POP
